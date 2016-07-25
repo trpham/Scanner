@@ -8,19 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIPickerViewDelegate,
+class ViewController: UIViewController,
+                      UIPickerViewDelegate,
                       UIImagePickerControllerDelegate,
                       UINavigationControllerDelegate {
     
-    var fruits = ["Pick a Fruit", "Apples", "Oranges", "Lemons", "Limes", "Blueberries"]
+    @IBOutlet var image1: UIImageView!
+    @IBOutlet var image2: UIImageView!
+    @IBOutlet var label1: UILabel!
+    @IBOutlet var label2: UILabel!
+    @IBOutlet var message: UILabel!
     
-    
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var infoLabel: UILabel!
+    var data = [["USA", "Italy", "China", "England"], ["Beijing", "London", "Rome", "Washington, DC"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage(named: "fruits.jpg")
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,41 +30,80 @@ class ViewController: UIViewController,UIPickerViewDelegate,
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return data.count
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return fruits.count
+        return data[component].count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return fruits[row]
+        return data[component][row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let fruitSelected = fruits[row]
-        switch (fruitSelected) {
-        case "Apples":
-            imageView.image = UIImage(named: "apples.jpg")
-            infoLabel.text = "These apples are red"
-        case "Oranges":
-            imageView.image = UIImage(named: "oranges.jpg")
-            infoLabel.text = "These oranges are red"
-        case "Lemons":
-            imageView.image = UIImage(named: "lemons.jpg")
-            infoLabel.text = "These apples are red"
-        case "Limes":
-            imageView.image = UIImage(named: "limes.jpg")
-            infoLabel.text = "These apples are red"
-        case "Blueberries":
-            imageView.image = UIImage(named: "blueberries.jpg")
-            infoLabel.text = "These apples are red"
+        let item1 = data[0][pickerView.selectedRowInComponent(0)]
+        let item2 = data[1][pickerView.selectedRowInComponent(1)]
+        
+        var correctMes = "The Capital of \(item1) is \(item2)."
+        var mess = "Match the Flags to the Captitals"
+        
+        let usa = UIImage(named: "usa.png")
+        let italy = UIImage(named: "italy.png")
+        let china = UIImage(named: "china.png")
+        let england = UIImage(named: "england.png")
+        
+        let washington = UIImage(named: "washington.jpg")
+        let rome = UIImage(named: "rome.jpg")
+        let beijing = UIImage(named: "beijing.jpg")
+        let london = UIImage(named: "london.jpg")
+        
+        switch(item1) {
+            case "USA":
+                image1.image = usa
+                label1.text = "USA"
+            
+            case "Italy":
+                image1.image = italy
+                label1.text = "Italy"
+            case "China":
+                image1.image = china
+                label1.text = "China"
+            case "England":
+                image1.image = england
+                label1.text = "England"
+            default:
+                image1.image = usa
+                label1.text = "USA"
+        }
+        
+        switch(item2) {
+        case "Beijing":
+            image2.image = beijing
+            label2.text = "Beijing"
+            if (label1.text == "China") {message.text = correctMes }
+            else {message.text = mess}
+        case "London":
+            image2.image = london
+            label2.text = "London"
+            if (label1.text == "England") {message.text = correctMes }
+            else {message.text = mess}
+        case "Rome":
+            image2.image = rome
+            label2.text = "Rome"
+            if (label1.text == "Italy") {message.text = correctMes }
+            else {message.text = mess}
+        case "Washington, DC":
+            image2.image = washington
+            label2.text = "Washington, DC"
+            if (label1.text == "USA") {message.text = correctMes }
+            else {message.text = mess}
         default:
-            imageView.image = UIImage(named: "fruits.jpg")
-            infoLabel.text = "Enjoy fruits"
-        } // end of switch statement
-    
-    } // end of didSelectRow function
+            image2.image = washington
+            label2.text = "Washington, DC"
+        }
+        
+    }
    
 }
 
