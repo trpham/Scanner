@@ -7,35 +7,56 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var imageView: UIImageView!
-    var imagePicker = UIImagePickerController()
+    
+    @IBOutlet var toolbar: UIToolbar!
+    
+    var audioPlayer = AVAudioPlayer()
+    var audioPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("whack", ofType: "mp3")!)
+    var playPauseBtn = UIBarButtonItem()
+    var musicPaused:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage(named: "beach.jpg")
-        imagePicker.delegate = self
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: audioPath)
+        } catch {
+            print("Not found")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    @IBAction func cameraBtn(sender: UIBarButtonItem) {
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
 
-    @IBAction func libraryBtn(sender: AnyObject) {
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
+    @IBAction func stopMusic(sender: AnyObject) {
+        var items = toolbar.items!
+        audioPlayer.stop()
+        audioPlayer.currentTime = 0
+        playPauseBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Play, target: self, action: #selector(ViewController.playPause(_:)))
+        items[0] = playPauseBtn
+        musicPaused = false
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func playPause(sender: UIBarButtonItem) {
+        var items = toolbar.items!
+        
+        if musicPaused == false {
+            playPauseBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Pause, target: self, action: #selector(ViewController.playPause(_:)))
+            items[0] = playPauseBtn
+            toolbar.setItems(items, animated: true)
+            audioPlayer.play()
+            musicPaused = true
+        } else {
+            var items = toolbar.items
+            playPauseBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Play, target: self, action: #selector(ViewController.playPause(_:)))
+            items![0] = playPauseBtn
+            toolbar.setItems(items, animated: true)
+            audioPlayer.pause()
+            musicPaused = false
+        }
     }
-
 }

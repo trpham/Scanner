@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4B6E4A73333ABC62E1AEF7E59844A28022E22520",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4B6E4A73333ABC62E1AEF7E59844A28022E22520" : 0,
+    "B84B46CC5ED1FE2EEB1BA4F3906AFBDAB620A04F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A40346F3-AA68-4CE0-A604-A17C11728F29",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4B6E4A73333ABC62E1AEF7E59844A28022E22520" : "Scanner\/",
+    "B84B46CC5ED1FE2EEB1BA4F3906AFBDAB620A04F" : "..\/whackthatmole"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Scanner",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Scanner.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/trpham\/Scanner.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4B6E4A73333ABC62E1AEF7E59844A28022E22520"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gameclosure\/whack-that-mole\/",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B84B46CC5ED1FE2EEB1BA4F3906AFBDAB620A04F"
+    }
+  ]
+}

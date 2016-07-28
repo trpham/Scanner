@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34BA7B411D4A8D4E00F20A28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA7B401D4A8D4E00F20A28 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		341FBCBF1D4AA38B00AB3878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341FBCBE1D4AA38B00AB3878 /* AVFoundation.framework */; };
+		341FBCC11D4AA56B00AB3878 /* whack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 341FBCC01D4AA56B00AB3878 /* whack.mp3 */; };
+		34BA7B411D4A8D4E00F20A28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA7B401D4A8D4E00F20A28 /* ViewController.swift */; };
 		E9F87E921D41E08D004B7219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F87E911D41E08D004B7219 /* AppDelegate.swift */; };
 		E9F87E971D41E08D004B7219 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F87E951D41E08D004B7219 /* Main.storyboard */; };
 		E9F87E991D41E08D004B7219 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F87E981D41E08D004B7219 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		341FBCBE1D4AA38B00AB3878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		341FBCC01D4AA56B00AB3878 /* whack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = whack.mp3; path = ../../../whackthatmole/resources/sounds/effect/whack.mp3; sourceTree = "<group>"; };
 		34BA7B401D4A8D4E00F20A28 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E9F87E8E1D41E08D004B7219 /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F87E911D41E08D004B7219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341FBCBF1D4AA38B00AB3878 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 		E9F87E851D41E08D004B7219 = {
 			isa = PBXGroup;
 			children = (
+				341FBCBE1D4AA38B00AB3878 /* AVFoundation.framework */,
 				E9F87E901D41E08D004B7219 /* Scanner */,
 				E9F87EA51D41E08D004B7219 /* ScannerTests */,
 				E9F87EB01D41E08D004B7219 /* ScannerUITests */,
@@ -99,6 +105,7 @@
 			children = (
 				E9F87E911D41E08D004B7219 /* AppDelegate.swift */,
 				34BA7B401D4A8D4E00F20A28 /* ViewController.swift */,
+				341FBCC01D4AA56B00AB3878 /* whack.mp3 */,
 				E9F87E951D41E08D004B7219 /* Main.storyboard */,
 				E9F87E981D41E08D004B7219 /* Assets.xcassets */,
 				E9F87E9A1D41E08D004B7219 /* LaunchScreen.storyboard */,
@@ -231,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9F87E9C1D41E08D004B7219 /* LaunchScreen.storyboard in Resources */,
+				341FBCC11D4AA56B00AB3878 /* whack.mp3 in Resources */,
 				E9F87E991D41E08D004B7219 /* Assets.xcassets in Resources */,
 				E9F87E971D41E08D004B7219 /* Main.storyboard in Resources */,
 			);

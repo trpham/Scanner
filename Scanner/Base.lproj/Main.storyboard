@@ -17,37 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beautiful Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IL4-No-8We">
-                                <rect key="frame" x="27" y="81" width="321" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H2h-Pz-H17">
-                                <rect key="frame" x="67" y="128" width="240" height="155"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beach" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-dg-Iy8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUi-lA-GcO">
-                                <rect key="frame" x="1" y="623" width="375" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf9-fw-6jn">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Camera" id="iaW-X9-IJi">
+                                    <barButtonItem systemItem="play" id="Qiq-ap-62X">
                                         <connections>
-                                            <action selector="cameraBtn:" destination="yPW-R3-Hk5" id="Zd0-lK-UCz"/>
+                                            <action selector="playPause:" destination="yPW-R3-Hk5" id="8bF-eq-koa"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1fP-fP-LU3"/>
-                                    <barButtonItem title="Photo Library" id="g5F-h5-CFc">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5cd-EC-daW"/>
+                                    <barButtonItem systemItem="stop" id="HuJ-Io-sMT">
                                         <connections>
-                                            <action selector="libraryBtn:" destination="yPW-R3-Hk5" id="EfX-rz-d6N"/>
+                                            <action selector="stopMusic:" destination="yPW-R3-Hk5" id="XaU-8k-Qxg"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gB7-W3-zoL">
+                                <rect key="frame" x="63" y="42" width="249" height="61"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="imageView" destination="H2h-Pz-H17" id="xv6-g5-2vu"/>
+                        <outlet property="toolbar" destination="nf9-fw-6jn" id="Brq-2J-gpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VB0-Hw-QnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -55,4 +56,7 @@
             <point key="canvasLocation" x="796.5" y="339.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beach" width="2560" height="1440"/>
+    </resources>
 </document>
